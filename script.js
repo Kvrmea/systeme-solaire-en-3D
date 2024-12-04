@@ -74,6 +74,7 @@ function showPlanetDetailsIn3D(planet, additionalData) {
         <strong>Gravité :</strong> ${planet.Gravité}<br>
         ${additionalData ? `
             <strong>Taille :</strong> ${additionalData.size}<br>
+            <strong>Distance/au Soleil :</strong> ${additionalData.distanceFromSun}<br>
             <strong>Température :</strong> ${additionalData.temperature}<br>
             <strong>Vitesse orbitale :</strong> ${additionalData.orbitalSpeed}<br>
             <strong>Période orbitale :</strong> ${additionalData.orbitalPeriod}<br>
