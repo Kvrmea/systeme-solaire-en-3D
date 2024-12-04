@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Système Solaire</title>
+</head>
+<body>
+    <header>
+        <h1>Système Solaire</h1>
+        <p>Explorez notre système solaire en 3D et découvrez des informations fascinantes sur les planètes !</p>
+    </header>
+
+    <main>
+        <section id="planet-section">
+            <div id="planet-detail" class="hidden"></div>
+        </section>
+        
+        <section id="three-section">
+            <h2>Vue 3D du Système Solaire</h2>
+            
+            <div id="three-container">
+                <button id="reset-camera">Réinitialiser la caméra</button>
+                <div id="planet-menu-3d" class="planet-menu">
+                    <div id="planet-container-3d"></div> <!-- Le menu des planètes -->
+                </div>
+                
+                <!-- Panneau pour afficher les détails des planètes -->
+                <div id="planet-info-3d" class="hidden">
+                    <h3 id="planet-name-3d"></h3>
+                    <p id="planet-details-3d"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Développé par Stella, Lila et Hugo &copy; 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="Three/app.js"></script>
+</body>
+</html>

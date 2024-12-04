@@ -1,0 +1,85 @@
+{
+  "planets": [
+    {
+      "name": "Mercure",
+      "temperature": "167°C to -183°C",
+      "orbitalSpeed": "172,292.2 km/h",
+      "rotationSpeed": "10.89 hours",
+      "size": "4,879 km (diameter)",
+      "distanceFromSun": "57.91 million km",
+      "orbitalPeriod": "87.97 days"
+    },
+    {
+      "name": "Vénus",
+      "temperature": "462°C",
+      "orbitalSpeed": "126,072 km/h",
+      "rotationSpeed": "243 days",
+      "size": "12,104 km (diameter)",
+      "distanceFromSun": "108.2 million km",
+      "orbitalPeriod": "225 days"
+    },
+    {
+      "name": "Terre",
+      "temperature": "15°C (average)",
+      "orbitalSpeed": "107,208 km/h",
+      "rotationSpeed": "24 hours",
+      "size": "12,742 km (diameter)",
+      "distanceFromSun": "149.6 million km",
+      "orbitalPeriod": "365.25 days"
+    },
+    {
+      "name": "Mars",
+      "temperature": "-63°C",
+      "orbitalSpeed": "86,877.2 km/h",
+      "rotationSpeed": "24.6 hours",
+      "size": "6,779 km (diameter)",
+      "distanceFromSun": "227.9 million km",
+      "orbitalPeriod": "687 days"
+    },
+    {
+      "name": "Jupiter",
+      "temperature": "-108°C",
+      "orbitalSpeed": "47,292.2 km/h",
+      "rotationSpeed": "9.9 hours",
+      "size": "139,820 km (diameter)",
+      "distanceFromSun": "778.5 million km",
+      "orbitalPeriod": "4,333 days"
+    },
+    {
+      "name": "Saturne",
+      "temperature": "-139°C",
+      "orbitalSpeed": "34,924.4 km/h",
+      "rotationSpeed": "10.7 hours",
+      "size": "116,460 km (diameter)",
+      "distanceFromSun": "1,434 million km",
+      "orbitalPeriod": "10,759 days"
+    },
+    {
+      "name": "Uranus",
+      "temperature": "-224°C",
+      "orbitalSpeed": "24,516.6 km/h",
+      "rotationSpeed": "17.2 hours",
+      "size": "50,724 km (diameter)",
+      "distanceFromSun": "2,871 million km",
+      "orbitalPeriod": "30,687 days"
+    },
+    {
+      "name": "Neptune",
+      "temperature": "-218°C",
+      "orbitalSpeed": "19,548 km/h",
+      "rotationSpeed": "16.1 hours",
+      "size": "49,244 km (diameter)",
+      "distanceFromSun": "4,495 million km",
+      "orbitalPeriod": "60,190 days"
+    },
+    {
+      "name": "Soleil",
+      "temperature": "5,500°C",
+      "orbitalSpeed": "792,000 km/h",
+      "rotationSpeed": "25 days at the equator",
+      "size": "1,392,700 km (diameter)",
+      "distanceFromSun": "0 km (center of the solar system)",
+      "orbitalPeriod": "N/A"
+    }
+  ]
+}

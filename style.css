@@ -1,0 +1,201 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: linear-gradient(180deg, #000428, #004e92);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+   /* background: rgba(0, 0, 0, 0.7);*/
+    background-image: url(images/fond-block.jpg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #f0f0f0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+#planet-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#planet-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;  
+    z-index: 10; 
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+#planet-container div {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    border-radius: 4px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#planet-container div:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(186, 159, 39);
+}
+
+#planet-detail {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+#three-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#three-container {
+    /* background-color: rgba(0, 0, 0, 0.8); 
+    width: 100%;
+    height: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 4px; */
+    position: relative; /* Pour positionner le bouton dans le conteneur */
+    width: 100%; /* Utilisation complète de l'espace */
+    height: 600px; /* Hauteur adaptée pour l'affichage 3D */
+    background: transparent; /* Suppression de tout arrière-plan */
+    overflow: hidden; /* Masque tout contenu débordant */
+}
+
+#three-container:focus {
+    box-shadow:  0 0 15px 5px rgba(255, 255, 255, 0.5);
+}
+
+.planet-menu {
+    position: absolute;
+    bottom: 20px;  /* Positionne le menu au bas */
+    left: 50%;  /* Centre le menu horizontalement */
+    transform: translateX(-50%);  /* Décale le menu pour qu'il soit parfaitement centré */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    z-index: 10;
+    display: flex;  /* Utilise flexbox pour aligner les éléments */
+    justify-content: center;  /* Aligne les éléments horizontalement */
+    gap: 10px;  /* Ajoute de l'espace entre les éléments */
+}
+
+#planet-container-3d {
+    display: flex;
+    justify-content: center; /* Centre les éléments dans le conteneur */
+    gap: 10px;
+}
+
+#planet-container-3d div {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    border-radius: 4px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#planet-container-3d div:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(186, 159, 39);
+}
+
+
+/* Style général pour les boutons */
+button {
+    background: rgba(0, 0, 0, 0.5); /* Fond transparent */
+    color: #fff; /* Couleur du texte blanche */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Bordure blanche légèrement transparente */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    font-size: 1rem; /* Taille du texte */
+    cursor: pointer; /* Curseur interactif */
+    transition: all 0.3s ease; /* Transition fluide */
+    position: absolute; /* Positionnement pour flotter */
+    top: 10px; /* Distance du haut */
+    right: 10px; /* Distance de la droite */
+    z-index: 10; /* Toujours visible au-dessus de la 3D */
+}
+
+/* Effet au survol */
+button:hover {
+    background: rgba(255, 255, 255, 0.7); /* Fond blanc */
+    color: #000; /* Texte noir */
+    border-color: rgba(0, 0, 0, 0.7); /* Bordure noire */
+    transform: scale(1.1); /* Légère augmentation de la taille */
+}
+
+/* Bouton actif (clic) */
+button:active {
+    transform: scale(1); /* Réduction de l'effet de hover */
+    opacity: 0.8; /* Légère transparence */
+}
+
+#planet-info-3d {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 100;
+    max-width: 200px;
+    text-align: center;
+}
+
+#planet-info-3d.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    font-size: 0.9rem;
+    color: #ccc;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
