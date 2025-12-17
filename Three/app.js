@@ -23,7 +23,7 @@ window.addEventListener('resize', () => {
 
 // Chargement des textures
 const textureLoader = new THREE.TextureLoader();
-const galaxyTexture = textureLoader.load('images/stars.jpg');  // Galaxie
+const galaxyTexture = textureLoader.load('assets/stars.jpg');  // Galaxie
 
 // Créer la sphère géante (arrière-plan)
 const backgroundGeometry = new THREE.SphereGeometry(500, 64, 64); // Sphère géante
@@ -36,22 +36,22 @@ scene.add(backgroundSphere); // Ajouter la sphère à la scène
 
 // Chargement des textures des planètes et des anneaux
 const planetTextures = {
-    mercure: textureLoader.load('images/texture_mercury.jpg'),
-    venus: textureLoader.load('images/texture_venus.jpg'),
-    terre: textureLoader.load('images/texture_earth.jpg'),
-    mars: textureLoader.load('images/texture_mars.jpg'),
-    jupiter: textureLoader.load('images/texture_jupiter.jpg'),
-    saturne: textureLoader.load('images/texture_saturn.jpg'),
-    uranus: textureLoader.load('images/texture_uranus.jpg'),
-    neptune: textureLoader.load('images/texture_neptune.jpg'),
-    moon: textureLoader.load('images/texture_moon.jpg')
+    mercure: textureLoader.load('assets/texture_mercury.jpg'),
+    venus: textureLoader.load('assets/texture_venus.jpg'),
+    terre: textureLoader.load('assets/texture_earth.jpg'),
+    mars: textureLoader.load('assets/texture_mars.jpg'),
+    jupiter: textureLoader.load('assets/texture_jupiter.jpg'),
+    saturne: textureLoader.load('assets/texture_saturn.jpg'),
+    uranus: textureLoader.load('assets/texture_uranus.jpg'),
+    neptune: textureLoader.load('assets/texture_neptune.jpg'),
+    moon: textureLoader.load('assets/texture_moon.jpg')
 };
 
 // Texture de l'anneau de Saturne
-const ringTexture = textureLoader.load('images/texture_saturn_ring.png');
+const ringTexture = textureLoader.load('assets/texture_saturn_ring.png');
 
 // Chargement de la texture du soleil
-const sunTexture = textureLoader.load('images/texture_sun.jpg')
+const sunTexture = textureLoader.load('assets/texture_sun.jpg')
 
 // Création du Soleil
 const sunGeometry = new THREE.SphereGeometry(7, 32, 32);

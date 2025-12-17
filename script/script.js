@@ -1,36 +1,67 @@
+// const apiUrl = "data/planets.json";
+// // const solarSystemApiUrl = "https://api.le-systeme-solaire.net/rest/bodies/";
+
+// async function solarSystem() {
+//     const [apiResponse, customDataResponse] = await Promise.all([fetch(solarSystemApiUrl), fetch(apiUrl)]);
+//     const apiData = await apiResponse.json();
+//     const customData = await customDataResponse.json();
+
+//     const planetsContainer = document.getElementById("planet-container-3d");
+//     let planetsData = [];
+
+//     // Parcourt les corps célestes pour récupérer les planètes
+//     for (let i = 0; i < apiData.bodies.length; i++) {
+//         const { id, moons, gravity, isPlanet } = apiData.bodies[i];
+//         if (isPlanet && gravity) {
+//             const moonNames = moons && Array.isArray(moons) && moons.length > 0
+//                 ? moons.slice(0, 10).map(lune => lune.moon).join(", ")
+//                 : "Aucun satellite";
+
+//             planetsData.push({
+//                 Nom: id,
+//                 Lune: moonNames,
+//                 Gravité: gravity,
+//             });
+//         }
+//     }
+
+//     // Trie par nom
+//     planetsData.sort((a, b) => a.Nom.localeCompare(b.Nom));
+
+//     // Affiche les planètes
+//     planetsData.forEach(planet => createPlanetElement(planet, customData, planetsContainer));
+// }
+
 const apiUrl = "data/planets.json";
-const solarSystemApiUrl = "https://api.le-systeme-solaire.net/rest/bodies/";
 
-async function solarSystem() {
-    const [apiResponse, customDataResponse] = await Promise.all([fetch(solarSystemApiUrl), fetch(apiUrl)]);
-    const apiData = await apiResponse.json();
-    const customData = await customDataResponse.json();
+const solarSystem = async () => {
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error("Erreur de chargement du JSON local");
+        
+        const customData = await response.json();
+        const planetsContainer = document.getElementById("planet-container-3d");
+        
+        if (!planetsContainer) return;
+        planetsContainer.innerHTML = ""; 
 
-    const planetsContainer = document.getElementById("planet-container");
-    let planetsData = [];
+        // On prépare les données à partir de ton fichier planets.json
+        const planetsData = customData.planets.map(planet => ({
+            Nom: planet.name,
+            Lune: "Voir détails", // Donnée par défaut car l'API externe est HS
+            Gravité: "N/A"
+        }));
 
-    // Parcourt les corps célestes pour récupérer les planètes
-    for (let i = 0; i < apiData.bodies.length; i++) {
-        const { id, moons, gravity, isPlanet } = apiData.bodies[i];
-        if (isPlanet && gravity) {
-            const moonNames = moons && Array.isArray(moons) && moons.length > 0
-                ? moons.slice(0, 10).map(lune => lune.moon).join(", ")
-                : "Aucun satellite";
+        // Tri alphabétique pour le menu
+        planetsData.sort((a, b) => a.Nom.localeCompare(b.Nom));
 
-            planetsData.push({
-                Nom: id,
-                Lune: moonNames,
-                Gravité: gravity,
-            });
-        }
+        // Création des éléments du menu
+        planetsData.forEach(planet => createPlanetElement(planet, customData, planetsContainer));
+
+    } catch (error) {
+        console.error("Erreur lors de l'initialisation du système solaire :", error);
     }
-
-    // Trie par nom
-    planetsData.sort((a, b) => a.Nom.localeCompare(b.Nom));
-
-    // Affiche les planètes
-    planetsData.forEach(planet => createPlanetElement(planet, customData, planetsContainer));
-}
+};
 
 // Crée un élément de planète
 function createPlanetElement(planet, customData, planetsContainer) {
@@ -57,8 +88,8 @@ function createPlanetElement(planet, customData, planetsContainer) {
     });
 
     // Ajoutez le menu des planètes dans le conteneur 3D
-    const planetMenuContainer = document.getElementById("planet-container-3d");
-    planetMenuContainer.appendChild(planetDiv);
+    // const planetMenuContainer = document.getElementById("planet-container-3d");
+    planetsContainer.appendChild(planetDiv);
 }
 
 
